@@ -1,0 +1,3 @@
+D:/SYS/Desktop/VulpineC/build/CMakeFiles/VulpineC.dir
+D:/SYS/Desktop/VulpineC/build/CMakeFiles/edit_cache.dir
+D:/SYS/Desktop/VulpineC/build/CMakeFiles/rebuild_cache.dir

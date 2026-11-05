@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/SYS/Desktop/VulpineC/build",
+  "command": "c:\\msys64\\ucrt64\\bin\\g++.exe -ID:/SYS/Desktop/VulpineC/VulpineC -ID:/SYS/Desktop/VulpineC/PRIVATE -ID:/SYS/Desktop/VulpineC/include -ID:/SYS/Desktop/VulpineC/build/generated -g -std=c++23 -o CMakeFiles\\VulpineC.dir\\src\\main.cpp.obj -c D:\\SYS\\Desktop\\VulpineC\\src\\main.cpp",
+  "file": "D:/SYS/Desktop/VulpineC/src/main.cpp",
+  "output": "D:/SYS/Desktop/VulpineC/build/CMakeFiles/VulpineC.dir/src/main.cpp.obj"
+}
+]

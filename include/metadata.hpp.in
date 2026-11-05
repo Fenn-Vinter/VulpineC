@@ -1,0 +1,4 @@
+namespace metadata {
+    constexpr const char* engineName = "@VULPINE_NAME@";
+    constexpr const char* version = "@VULPINE_VERSION@";
+}

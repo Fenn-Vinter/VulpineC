@@ -1,45 +1,35 @@
-#include <cstddef>
-#include <iostream>
+#include "lsp.hpp"
 #include <print>
 
 #include <metadata.hpp>
-#include <stop_token>
-#include <string>
 #include <string_view>
-
-constexpr std::string_view OUTPUT_ARG   = "-o";
-constexpr std::string_view LSP_ARG      = "-lsp";
-
-std::string sourceFile {};
-
-auto lsp() -> int {
-    
-}
-
-auto compile(std::stop_token stoken) -> void {
-    std::println("[{}] Compiling {}", metadata::engineName, sourceFile);
-
-    if (stoken.stop_requested()) {
-        std::println("[{}] Compilation cancelled.", metadata::engineName);
-        return;
-    }
-
-    std::println("[{}] Compilation finished successfully.", metadata::engineName);
-}
+#include <compiler.hpp>
 
 auto print_help() -> void {
     std::println("usage:");
+    std::println("{} starts the Vulpine LSP", metadata::engineName);
     std::println("{} <src.vlp> --Compiles the vulpine sourcefile", metadata::engineName);
-    std::println("{} <rootpath> {} --Starts the language server and sets rootpath", metadata::engineName, LSP_ARG);
-    std::println("{} lets you define a different folder to collect build and bin files", OUTPUT_ARG);
+    std::println("{} <src.vlp> <path> --Compiles the vulpine sourcefile and puts the bin and build folder into the new path", metadata::engineName);
 }
 
 auto main(int argc, char* argv[]) -> int {
     std::println("{} v{} initialized.", metadata::engineName, metadata::version);
 
     if (argc < 2) {
-        print_help();
-        return 1;
+        LSP lsp{};
+        return lsp.main();
+    } else {
+        if (std::string_view(argv[1]) == "help") {
+            print_help();
+            return 0;
+        }
+
+        Compiler compiler{
+            argv[1],
+            (argc > 2) ? argv[2] : ""
+        };
+
+        return compiler.compile();
     }
 
     return 0;

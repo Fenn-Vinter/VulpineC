@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <tokentype.hpp>
 
-struct token {
+struct Token {
     TokenType type;
     size_t pos;
     size_t len;

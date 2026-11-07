@@ -19,7 +19,11 @@ configure_file(
     @ONLY
 )
 
-add_executable(VulpineC src/main.cpp)
+add_executable(VulpineC src/main.cpp
+    src/compiler/compile.cpp
+    src/compiler/compiler.cpp
+    src/lsp/lsp.cpp
+)
 
 target_include_directories(VulpineC PRIVATE 
     include

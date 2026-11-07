@@ -2,4 +2,5 @@
 
 int Compiler::compile() {
     
+    return 0;
 }

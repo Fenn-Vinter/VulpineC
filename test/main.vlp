@@ -1,0 +1,15 @@
+project main {
+    version = "1.0.0";
+    entry = start();
+}
+
+import types;
+using types;
+
+import sys;
+
+fn start(): int {
+    sys::alloc(4096);
+
+    return sys::stdout("Hello World!\n", 13):int;
+}
